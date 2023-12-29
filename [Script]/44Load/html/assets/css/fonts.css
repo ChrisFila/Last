@@ -1,0 +1,27 @@
+/* // <!-- by Double L Leaks
+// https://discord.gg/doublel --> */
+
+@font-face {
+  font-family: Gilroy-Medium; 
+  src: url('../fonts/gilroy/Gilroy-Medium.ttf'); 
+}
+
+@font-face {
+  font-family: Gilroy-Bold; 
+  src: url('../fonts/gilroy/Gilroy-Bold.ttf'); 
+}
+
+@font-face {
+  font-family: Gilroy-Semibold; 
+  src: url('../fonts/gilroy/Gilroy-Semibold.ttf'); 
+}
+
+@font-face {
+  font-family: Akrobat-Regular; 
+  src: url('../fonts/akrobat/Akrobat-Regular.otf'); 
+}
+
+@font-face {
+  font-family: DrukCyr-Medium; 
+  src: url('../fonts/drukcyr/DrukCyr-Medium.ttf'); 
+}

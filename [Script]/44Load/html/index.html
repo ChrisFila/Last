@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>REDLIFE</title>
+	<link type="text/css" rel="stylesheet" href="assets/css/fonts.css">
+</head>
+<body>
+	<style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            user-select: none;  
+        }
+
+        body, html {
+            font-family: Gilroy-Medium; 
+            height: 100%;
+            width: 100%;
+        }
+
+        input {
+            outline: none;
+            border: none;
+        }
+
+        button {
+            outline: none !important;
+            border: none;
+            cursor: pointer;
+        }
+
+        .form {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            min-height: 100vh;
+            z-index: 1;
+            background: black;
+        }
+
+        .bg-img {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+        }
+
+        .row, .media-box, .project-team-overflow, .project-team-container, .download-status, .volume-box, .space-box {
+            display: flex;
+            align-items: center;
+        }
+
+        .column, .welcome-text, .content, .team, .file-status {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .welcome-text {
+            transition: all 0.15s ease;
+        }
+
+        .welcome-txt {
+            font-family: DrukCyr-Medium; 
+            text-transform: uppercase;
+            font-size: 4.9940104166vw;
+            color: #FFFFFF;
+        }
+
+        .welcome-text .row span:nth-child(3) {
+            font-family: Akrobat-Regular; 
+            font-size: 1.0416666666vw;
+            width: 16.6666666666vw;
+            margin-left: 0.625vw;
+            color: rgba(255, 255, 255, 0.25);
+        }
+
+        .fl-color-text {
+            font-family: DrukCyr-Medium; 
+        }
+
+        .fl-color-text span:nth-child(1) {
+            text-transform: uppercase;
+            font-size: 9.4119791666vw;
+            background: linear-gradient(111.21deg, #ff0000 6.3%, #ff0000 95.19%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+
+        .fl-color-text span:nth-child(2) {
+            text-transform: uppercase;
+            font-size:9.4119791666vw;
+            margin-left: 0.7291666666vw;
+            color: #FFFFFF;
+        }
+
+        .welcome-text .row {
+            margin-top: -2.3958333333vw;
+        }
+
+        .lines-img {
+            width: 25.3125vw;
+            height: 5vw;
+            margin-top: -4.4270833333vw;
+        }
+
+        .content {
+            position: absolute;
+            top: 7.96875vw;
+            left: 6.9270833333vw;
+        }
+
+        .media-box {
+            margin-top: 2.5vw;
+        }
+
+        .insta-box, .discord-box, .browser-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.9317708333vw;
+            height: 2.9317708333vw;
+            margin-left: 0.7010416666vw;
+            border-radius: 15.625vw;
+            transition: all 0.15s ease;
+        }
+
+        .insta-box img {
+            width: 1.903125vw;
+            height: 1.8171875vw;
+        }
+
+        .discord-box img {
+            width: 1.8802083333vw;
+            height: 1.7208333333vw;
+        }
+
+        .browser-box img {
+            width: 1.7208333333vw;
+            height: 1.625vw;
+        }
+
+        .insta-box {
+            border: 0.1041666666vw solid #ff0000;
+            box-shadow: 0vw 0vw 0.672515625vw rgba(226, 21, 21, 0.295);
+        }
+
+        .discord-box {
+            border: 0.1041666666vw solid #fa6969;
+            box-shadow: 0vw 0vw 0.672515625vw rgba(226, 21, 21, 0.295);
+        }
+
+        .browser-box {
+            border: 0.1041666666vw solid #ff6969;
+            box-shadow: 0vw 0vw 0.672515625vw rgba(226, 21, 21, 0.295);
+        }
+
+        .insta-box:hover, .discord-box:hover, .browser-box:hover, .welcome-text:hover {
+            transform: translateY(0.1041666666vw);
+        }
+
+        .project-team-overflow {
+            align-items: center;
+            width: 35.625vw;
+            height: 12.0833333333vw;
+            overflow: hidden;
+        }
+
+        .team {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: 10.9895833333vw;
+            height: 10.9895833333vw;
+            margin-left: 1.0416666666vw;
+            transition: all 0.15s ease;
+        }
+
+        .team img:nth-child(1) {
+            position: absolute;
+            width: 1.9791666666vw;
+            height: 2.9166666666vw;
+            left: -0.5729166666vw;
+            top: -0.7291666666vw;
+        }
+
+        .team img:nth-child(2) {
+            position: absolute;
+            width: 10.9895833333vw;
+            height: 10.9895833333vw;
+            bottom: 0vw;
+            right: 0vw;
+        }
+
+        .team span:nth-child(4) {
+            font-family: DrukCyr-Medium; 
+            font-size: 1.875vw;
+            margin-top: 1.3020833333vw;
+            background: linear-gradient(180deg, rgba(252, 73, 73, 0.685) 0%, #ff5656 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            text-shadow: 0vw 0.2083333333vw 1.9791666666vw #ff5656;
+        }
+
+        .post {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7694322916vw;
+            text-transform: uppercase;
+            width: 8.6166666666vw;
+            height: 1.615625vw;
+            margin-top: 0.2604166666vw;
+            margin-bottom: 0.15625vw;
+            border-radius: 2.1159322916vw;
+        }
+
+        .blue {
+            text-shadow: 0vw 0.2187953125vw 2.0785572916vw #ff0000;
+            color: #ff0000;
+            border: 0.0769432291vw solid #ff0000;
+            filter: drop-shadow(0vw 0.2187953125vw 2.0785572916vw #ff0000);
+        }
+
+        .red {
+            border: 0.0769432291vw solid #ff0000;
+            filter: drop-shadow(0vw 0.2187953125vw 2.0785572916vw #ff0000);
+            color: #ff0000;
+            text-shadow: 0vw 0.2187953125vw 2.0785572916vw #ff0000;
+        }
+
+        .yellow {
+            color: #ff0000;
+            text-shadow: 0vw 0.2187953125vw 2.0785572916vw #ff0000;
+            border: 0.0769432291vw solid #ff0000;
+            filter: drop-shadow(0vw 0.2187953125vw 2.0785572916vw #ff0000);
+        }
+
+        .media-box :first-child {
+            margin-left: 0vw;
+        }
+
+        .project-team-overflow :first-child {
+            margin-left: 0vw;
+        }
+
+        .team:hover {
+            transform: translateY(0.1041666666vw);
+        }
+
+        .arrow-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.9505208333vw;
+            height: 1.9505208333vw;
+            border: 0.0520833333vw solid rgba(216, 192, 192, 0.753);
+            transition: all 0.15s ease;
+        }
+
+        .column .arrow-box:nth-child(2) {
+            margin-top: 0.2604166666vw;
+        }
+
+        .column .arrow-box:nth-child(1) img {
+            transform: rotate(180deg);
+        }
+
+        .project-team-container {
+            margin-top: 1.9270833333vw;
+        }
+
+        .project-team-container .column {
+            margin-top: 0.5729166666vw;
+            margin-left: 0.625vw;
+            margin-bottom: auto;
+        }
+
+        .align {
+            align-items: center;
+        }
+
+        .arrow-box:hover {
+            border: 0.0520833333vw solid rgb(228, 24, 24);
+        }
+
+        .file-status {
+            position: relative;
+            width: max-content;
+            margin-top: 5.2083333333vw;
+            font-size: 0.78125vw;
+            color: #FFFFFF;
+        }
+
+        .download-status {
+            height: 1.9270833333vw;
+            padding: 0vw 0.2083333333vw;
+            border: 0.0520833333vw solid rgba(255, 255, 255, 0.15);
+        }
+
+        .file-status span:last-child {
+            margin-left: auto;
+        }
+
+        .download-status {
+            margin-top: 0.2604166666vw;
+        }
+
+        .download-level {
+            width: 0.7291666666vw;
+            height: 1.5104166666vw;
+            margin-left: 0.2083333333vw;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .level-active {
+            background: #ff0000;
+        }
+
+        .owl-nav {
+            display: none !important;
+        }
+
+        .owl-stage {
+            display: flex;
+            width: 94.7916666666vw !important;
+        }
+
+        .owl-stage .owl-item:first-child {
+            margin-left: 1.0416666666vw;
+        }
+
+        .notifi {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.25vw 2.0833333333vw;
+            background: rgba(255, 0, 0, 0.719);
+            border-radius: 0.4166666666vw;
+            top: 2.0833333333vw;
+        }
+
+        .notifi span {
+            font-family: Gilroy-Medium; 
+            font-size: 0.9375vw;
+            margin-left: 0.8333333333vw;
+            color: #FFFFFF;
+        }
+
+        .download-status :first-child {
+            margin-left: 0vw;
+        }
+
+        .music-bar {
+            position: absolute;
+            display: flex;
+            align-content: center;
+            justify-content: flex-end;
+            right: 0vw;
+            bottom: 1.6666666666vw;
+            width: 25vw;
+            height: 9.375vw;
+            padding-right: 2.0833333333vw;
+            background: linear-gradient(270deg, rgb(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        .music-name {
+            display: flex;
+            align-items: center;
+        }
+
+        .music-name img {
+            width: 1.6666666666vw;
+            height: 1.6666666666vw;
+        }
+
+        .music-name .text-column {
+            display: flex;
+            flex-direction: column;
+            margin-left: 0.625vw;
+        }
+
+        .music-name span:first-child {
+            font-family: Gilroy-Semibold; 
+            font-size: 0.8333333333vw;
+            width: 9.9479166666vw;
+            color: #FFFFFF;
+        }
+
+        .music-name span:last-child {
+            font-family: Gilroy-Medium; 
+            font-size: 0.7291666666vw;
+            color: rgba(255, 255, 255, 0.48);
+        }
+
+        .music-interaption {
+            display: flex;
+            align-items: center;
+            margin-left: 1.25vw;
+        }
+
+        .prev-arrow, .next-arrow  {
+            width: 1.6666666666vw;
+            height: 1.6666666666vw;
+            opacity: 0.64;
+            transition: all 0.15s ease;
+        }
+
+        .prev-arrow:hover {
+            transform: translateY(0.0520833333vw);
+            opacity: 1;
+        }
+
+        .next-arrow:hover {
+            transform: rotate(180deg) translateY(-0.0520833333vw);
+            opacity: 1;
+        }
+
+        .next-arrow {
+            transform: rotate(180deg);
+        }
+
+        .circle-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.9166666666vw;
+            height: 2.9166666666vw;
+            margin: 0vw 1.25vw;
+            border: 0.1041666666vw solid rgba(255, 255, 255, 0.48);
+            border-radius: 15.625vw;
+            transition: all 0.15s ease;
+        }
+
+        .circle-btn .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5vw;
+            height: 2.5vw;
+            background: #ffffff;
+            box-shadow: inset 0vw 0vw 1.0416666666vw rgba(0, 0, 0, 0.32);
+            border-radius: 15.625vw;
+            transition: all 0.15s ease;
+        }
+
+        .circle-btn .btn img {
+            width: 1.0416666666vw;
+            height: 1.0416666666vw;
+            transition: all 0.15s ease;
+        }
+
+        .circle-btn:hover {
+            border: 0.1041666666vw solid rgba(255, 255, 255, 0.8);
+        }
+
+        .circle-btn:hover .btn {
+            background: rgba(255, 255, 255, 0.84);
+        }
+
+        .time-box {
+            display: flex;
+            align-items: center;
+            margin-top: 0.4166666666vw;
+        }
+
+        .progress-bar {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 18.0208333333vw;
+            height: 0.3125vw;
+            margin: 0 0.5208333333vw;
+            background: rgb(255, 255, 255, 0.16);
+            border-radius: 1.5625vw;
+        }
+
+        .progress {
+            width: 39%;
+            height: 100%;
+            left: 0vw;
+            background: #FFFFFF;
+            border-radius: 1.5625vw;
+        }
+
+        .circle-progress {
+            width: 0.625vw;
+            height: 0.625vw;
+            margin-left: -0.3125vw;
+            background: #FFFFFF;
+            box-shadow: 0vw 0vw 0.4166666666vw rgba(0, 0, 0, 0.88);
+            border-radius: 1.5625vw;
+        }
+
+        .time-box span:nth-child(1), .time-box span:last-child {
+            font-family: Gilroy-Medium; 
+            font-size: 0.7291666666vw;
+            color: #FFFFFF;
+        }
+
+        .time-box span:last-child {
+            opacity: 0.48;
+        }
+
+        .grid {
+            display: flex;
+            align-items: center;
+        }
+
+        .grid .column {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .grid .column .row:nth-child(2) {
+            margin-top: 1.25vw;
+            margin-left: 0.4166666666vw;
+        }
+
+        .volume-bar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: -1.875vw;
+        }
+
+        .volume-bar img {
+            margin-top: 1.6666666666vw;
+        }
+
+        input[type=range] {
+            width: 3.59375vw;
+            height: 0.3125vw;
+            background-color: rgba(255, 255, 255, 0.16);
+            background: linear-gradient(90deg, rgba(255,255,255, 1) 50%, rgba(255, 255, 255, 0.08) 50%);
+            -webkit-appearance: none;
+            outline: none;
+            border-radius: 1.3020833333vw;
+            transform: rotateZ(270deg);
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            width: 0.625vw;
+            height: 0.625vw;
+            background: white;
+            border-radius: 2.6041666666vw;
+            box-shadow: 0vw 0vw 0.4166666666vw rgba(0, 0, 0, 0.8);
+            -webkit-appearance: none;
+            appearance: none;
+        } 
+    </style>
+    <div class="form">
+        <img class="bg-img" src="assets/images/bg.png"/>
+
+        <div class="notifi" style="display: none;">
+            <img src="assets/images/copy.svg"/>
+            <span>Link Kopyalandı</span>
+        </div>
+
+        <div class="music-bar">
+            <div class="grid">
+                <div class="volume-bar">
+                    <div class="range-box">
+                        <input class="audio_input" type="range" min="0" max="100" step="1" value="50" oninput="setVolume()">
+                    </div>
+                    <img src="assets/images/volume.svg"/>
+                </div>
+                <div class="column">
+                    <div class="row">
+                        <div class="music-name">
+                            <img src="assets/images/musical-note.svg"/>
+                            <div class="text-column">
+                                <span class="songName">My brothers is the best</span>
+                                <span class="songArtist">7xnse</span>
+                            </div>
+                        </div>
+
+                        <div class="music-interaption">
+                            <img onclick="nextSong()" class="prev-arrow" src="assets/images/skip-arrow.svg"/>
+                            <div class="circle-btn">
+                                <div class="btn" onclick="ToggleAudio();">
+                                    <img class="playerBtn" src="assets/images/pause.svg"/>
+                                </div>
+                            </div>
+                            <img onclick="nextSong()" class="next-arrow" src="assets/images/skip-arrow.svg"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="time-box">
+                            <span class="playerCurTime">0:00</span>
+                            <div class="progress-bar">
+                                <div class="progress"></div>
+                                <div class="circle-progress"></div>
+                             </div>
+                            <span class="playerDuration">3:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="welcome-text">
+                <span class="welcome-txt">BIENVENUE SUR</span>
+                <div class="row">
+                    <div class="fl-color-text">
+                        <span>FLASH</span>
+                        <span>SIDE</span>
+                    </div>
+                    <img src="assets/images/lightning.png"/>
+                    <span>
+                        PRÉPAREZ VOTRE ATTERRISSAGE !
+                        DANS UNE VILLE QUI NE DORT JAMAIS.
+                        PLONGEZ DANS LE MONDE DU ROLEPLAY.
+                        ENTREZ DANS FLASH SIDE ET CRÉEZ VÔTRE
+                        PERSONNAGE.
+                    </span>
+                </div>
+                <img class="lines-img" src="assets/images/lines.svg"/>
+            </div>
+
+
+            <div class="project-team-container align space-carousel">
+                <div class="project-team-overflow">
+                    <div class="team">
+                        <img src="assets/images/eclair.png"/>
+                        <span>Flash44</span>
+                        <div class="post red">Développeur</div>
+                    </div>
+                    <div class="team">
+                        <img src="assets/images/eclair.png"/>
+                        <span>Twz</span>
+                        <div class="post red">Développeur</div>
+                    </div>
+                    <div class="team">
+                        <img src="assets/images/eclair.png"/>
+                        <span>100kara</span>
+                        <div class="post red">Fondateur</div>
+                    </div>
+                    
+                    <div class="team">
+                        <img src="assets/images/eclair.png"/>
+                        <span>Tzx</span>
+                        <div class="post red">Staff</div>
+                    </div>
+                    <div class="team">
+                        <img src="assets/images/eclair.png"/>
+                        <span>Slmlamiss</span>
+                        <div class="post red">tktp</div>
+                    </div>
+                </div>
+
+
+                <div class="column">
+                    <div class="arrow-box right-arrow">
+                        <img src="assets/images/arrow.svg"/>
+                    </div>
+                    <div class="arrow-box left-arrow">
+                        <img src="assets/images/arrow.svg"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="file-status">
+                <div class="row">
+                    <span>Chargement . . .</span>
+                    <span class="counter">0%</span>
+                </div>
+                <div class="download-status">
+                    <div class="download-level dw_1"></div>
+                    <div class="download-level dw_2"></div>
+                    <div class="download-level dw_3"></div>
+                    <div class="download-level dw_4"></div>
+                    <div class="download-level dw_5"></div>
+                    <div class="download-level dw_6"></div>
+                    <div class="download-level dw_7"></div>
+                    <div class="download-level dw_8"></div>
+                    <div class="download-level dw_9"></div>
+                    <div class="download-level dw_10"></div>
+                    <div class="download-level dw_11"></div>
+                    <div class="download-level dw_12"></div>
+                    <div class="download-level dw_13"></div>
+                    <div class="download-level dw_14"></div>
+                    <div class="download-level dw_15"></div>
+                    <div class="download-level dw_16"></div>
+                    <div class="download-level dw_17"></div>
+                    <div class="download-level dw_18"></div>
+                    <div class="download-level dw_19"></div>
+                    <div class="download-level dw_20"></div>
+                    <div class="download-level dw_21"></div>
+                    <div class="download-level dw_22"></div>
+                    <div class="download-level dw_23"></div>
+                    <div class="download-level dw_24"></div>
+                    <div class="download-level dw_25"></div>
+                    <div class="download-level dw_26"></div>
+                    <div class="download-level dw_27"></div>
+                    <div class="download-level dw_28"></div>
+                    <div class="download-level dw_29"></div>
+                    <div class="download-level dw_30"></div>
+                    <div class="download-level dw_31"></div>
+                    <div class="download-level dw_32"></div>
+                    <div class="download-level dw_33"></div>
+                    <div class="download-level dw_34"></div>
+                    <div class="download-level dw_35"></div>
+                    <div class="download-level dw_36"></div>
+                    <div class="download-level dw_37"></div>
+                    <div class="download-level dw_38"></div>
+                    <div class="download-level dw_39"></div>
+                    <div class="download-level dw_40"></div>
+                    <div class="download-level dw_41"></div>
+                    <div class="download-level dw_42"></div>
+                    <div class="download-level dw_43"></div>
+                    <div class="download-level dw_44"></div>
+                    <div class="download-level dw_45"></div>
+                    <div class="download-level dw_46"></div>
+                    <div class="download-level dw_47"></div>
+                    <div class="download-level dw_48"></div>
+                    <div class="download-level dw_49"></div>
+                    <div class="download-level dw_50"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="assets/js/script.js"></script>
+    <script>
+        var owl = $('.space-carousel .project-team-overflow');
+
+        owl.owlCarousel({
+            loop: true,
+            margin: 20,
+        })
+
+        owl.owlCarousel();
+
+        $('.right-arrow').click(function() {
+            owl.trigger('next.owl.carousel');
+        })
+
+        $('.left-arrow').click(function() {
+            owl.trigger('prev.owl.carousel', [300]);
+        })
+
+
+        $('input[type=range]').on('input keyup', function(e) {
+			let max = this.max;
+			let xy = this.value;
+			let percent = 100 / (max / xy);
+			let color = `linear-gradient(90deg, rgba(255,255,255, 1) ${percent}%, rgba(255, 255, 255, 0.08) ${percent}%)`;
+			this.style.background = color;	
+		});
+    </script>
+</body>
+</html>

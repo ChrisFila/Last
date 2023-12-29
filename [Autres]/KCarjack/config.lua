@@ -1,0 +1,14 @@
+Config                            = {}
+Config.CombienDeLockPick_Retire = 1 
+Config.VehiculePasfermer = '~o~Ce véhicule n\'est pas fermé'
+Config.AucunVehicule = '~r~Aucun véhicule à proximité'
+Config.ReussiALockpick = '~g~Vous avez réussi à ouvrir les portes'
+Config.RaterLeLockpick = '~r~T\'as raté, l\'alarme va sonner'
+Config.TempsAlerteLSPD = 8000 ------- 8 SECONDES
+Config.TempsAlarme = 10000 ---- 10 SECONDES
+Config.TempsEnvoieAlerteLSPD = 5000 --- 5 secondes après votre échec une notif est envoyé à la LSPD
+Config.ImageBlipsAlerte = 161
+Config.TailleBlipAlerte = 1.2
+Config.CouleurAlerte = 47
+Config.TextBlipAlerte = 'Zone du vole'
+Config.LogsCrocet = ''

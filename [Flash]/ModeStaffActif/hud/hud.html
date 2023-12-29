@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="nui://game/ui/jquery.js"></script>
+    <script src="https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="assets/css/hud.css"
+    />
+    <link rel="stylesheet" href="assets/css/hud.css" />
+    <link
+      rel="stylesheet"
+      href="assets/css/menu.css"
+    />
+    <link rel="stylesheet" href="assets/css/menu.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div id="hud">
+      <div class="element-2">
+        <div class="e3-hud-middle">
+          <div class="staffinfo" style="display: none">
+            <div class="staffinfo-container"></div>
+            <div class="staffinfo-container-c1">
+              <div
+                style="
+                  display: flex;
+                  flex-direction: row;
+                  align-items: center;
+                  margin-bottom: 5px;
+                  margin-left: 15px;
+                "
+              >
+                <img
+                  style="width: 2.75vw; margin-right: 7.5px"
+                  src="assets/images/superhero.png"
+                />
+                <p style="font-size: 27.5px; color: #ff0000; margin-top: 10px">
+                  MODE STAFF FLASHSIDE
+                </p>
+              </div>
+
+              <div style="margin: 0px 45px">
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    height: 1.5vw;
+                  "
+                >
+                  <img
+                    style="
+                      width: 1.2vw;
+                      margin-right: 7.5px;
+                      margin-left: 4.5px;
+                      margin-top: 0.5vh;
+                    "
+                    src="assets/images/players.png"
+                  />
+                  <p
+                    id="si-player"
+                    style="
+                      font-family: 'Bourgeois-Bold';
+                      font-size: 1.3vw;
+                      color: rgb(255, 0, 0);
+                      margin-right: 5px;
+                    "
+                  >
+                    
+                  </p>
+                  <p
+                    style="
+                      font-family: 'Bourgeois-Bold';
+                      font-size: 1.3vw;
+                      color: #ffffff;
+                    "
+                  >
+                    joueurs connectés
+                  </p>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    height: 1.5vw;
+                  "
+                >
+                  <img
+                    style="width: 1.75vw; margin-right: 4px; margin-top: 0.5vh"
+                    src="assets/images/staffs.png"
+                  />
+                  <p
+                    id="si-staffs"
+                    style="
+                      font-family: 'Bourgeois-Bold';
+                      font-size: 1.3vw;
+                      color: #ff0000;
+                      margin-left: -2px;
+                      margin-right: 5px;
+                    "
+                  >
+                    
+                  </p>
+                  <p
+                    style="
+                      font-family: 'Bourgeois-Bold';
+                      font-size: 1.3vw;
+                      color: #ffffff;
+                      margin-right: 4px;
+                    "
+                  >
+                    Staffs connectés
+                  </p>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    height: 1.5vw;
+                  "
+                >
+                  <img
+                    style="
+                      width: 1.3vw;
+                      margin-right: 7.5px;
+                      margin-left: 4px;
+                      margin-top: 0.5vh;
+                    "
+                    src="assets/images/reports.png"
+                  />
+                  <p
+                    id="si-reports"
+                    style="
+                      font-family: 'Bourgeois-Bold';
+                      font-size: 1.3vw;
+                      color: #ff0000;
+                      margin-right: 5px;
+                    "
+                  >
+                    
+                  </p>
+                  <p
+                    style="
+                      font-family: 'Bourgeois-Bold';
+                      font-size: 1.3vw;
+                      color: #ffffff;
+                      margin-right: 4px;
+                    "
+                  >
+                    Reports Traités
+                  </p>
+                  <p
+                    id="si-reports-wait"
+                    style="
+                      font-family: 'Bourgeois-Bold';
+                      font-size: 1vw;
+                      color: #ff0000;
+                      margin-top: 0.3vh;
+                    "
+                  >
+                    (25 en attente)
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/hud.js" type="text/javascript"></script>
+  </body>
+</html>

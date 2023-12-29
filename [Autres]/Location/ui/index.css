@@ -1,0 +1,116 @@
+@font-face {
+    font-family: Bolgart;
+    src: url(Bolgart.ttf);
+}
+
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: 'Bolgart';
+}
+
+body {
+    background: none !important;
+    font-family: 'Bolgart';
+}
+
+
+#titleContainer {
+    align-items: center;
+    font-size: 50px;
+    padding: 20px;
+    color: rgb(255, 255, 255);
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1D2029;
+    height: 100px;
+    width: 500px;
+    border: 5px solid #F40550;
+    border-radius: 20px;
+}
+
+#leaveicon {
+    position: absolute;
+    margin-left: 66%;
+    margin-top: 12%;
+    font-size: 5em;
+}
+
+#leaveicon:hover, #rightArrow:hover, #leftArrow:hover {
+    cursor: pointer;
+}
+
+#title {
+    font-size: 1.7em;
+    text-align: center;
+}
+
+#vehiclesContainer {
+    text-align: center;
+    font-size: 50px;
+    padding: 20px;
+    color: rgb(255, 255, 255);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: #1D2029;
+    height: 265px;
+    width: 350px;
+    border: 5px solid #F40550;
+    border-radius: 20px;
+    transform: translate(-50%, -50%);
+}
+
+#hireVehicle {
+    position: absolute;
+    color: white;
+    font-size: 50px;
+    top: 66%;
+    left: 44.2%;
+    z-index: 1;
+    background-color: #1D2029;
+    border: 5px solid #F40550;
+    border-radius: 20px;
+    padding-bottom: 15px;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+#hireVehicle:hover {
+    cursor: pointer;
+}
+
+#price {
+    padding-top: 17px;
+    font-size: 40px;
+}
+
+#rightArrow {
+    position: fixed;
+    top: 47%;
+    left: 62%;
+}
+
+#leftArrow {
+    position: fixed;
+    top: 47%;
+    left: 35.2%;
+}
+
+#location {
+    animation-duration: 0.9s;
+    animation-name: animate-fade;
+    animation-delay: 0.01s;
+    animation-fill-mode: backwards;
+}
+  
+@keyframes animate-fade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}

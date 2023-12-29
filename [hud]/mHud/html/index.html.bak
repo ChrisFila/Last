@@ -1,0 +1,174 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/tarek.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/chat.css" rel="stylesheet"></link>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+    <div id="ui">
+        <img class="bars" src="./img/arabe.png">
+        <div id="infos">
+            <div class="info-server">
+                <div class="linetop">
+                <div class="container-server">
+                    <div class="g1">
+                        <div class="g1-content">
+                            <img class="imagegroup" src="img/group.png">
+                            <span class="countgg" id="online-count">0</span><span class="countggg"> / 350</span>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="g2">
+                        <div class="g2-content">
+                            <img class="imageplayer" src="img/user.png">
+                            <span class="playergg" id="player-id">0</span>
+                        </div>
+                    </div>
+                    <div class="g3">
+                        <div class="g3-content">
+                            <span class="discordgg" id="discord">discord.gg/flashside</span>
+                        </div>
+                    </div>
+                    <div class="g4">
+                        <div class="g4-content">
+                            <img class="logo" src="img/logo.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="info">
+                <div class="linecash">
+                <div class="container">
+                    <img class="imagecash" src="img/dollar.png">
+                    <!-- <span class="state" id="money">0</span> -->
+                    <span class="state" id="money">0</span>
+                </div>
+                </div>
+            </div>
+            <div class="info">
+                <div class="linebank">
+                <div class="container">
+                    <img class="imagebank" src="img/credit-card.png">
+                    <!-- <span class="state" id="bank">0</span> -->
+                    <span class="state" id="bank">0</span>
+                </div>
+            </div>
+            </div>
+            <div class="info">
+                <div class="lineblack">
+                <div class="container">
+                    <img class="imageblack" src="img/black_money.png">
+                    <!-- <span class="state" id="black_money">0</span> -->
+                    <span class="state" id="black_money">0</span>
+                </div>
+                </div>
+            </div>
+            </div>
+    </div>
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="js/main.js"></script>
+
+    <div id="app"></div>
+
+    <script type="text/x-template" id="app_template">
+        <div id="app">
+            <div class="chat-window" :style="this.style" :class="{ 'fadeOutUp animated': !showWindow, 'hidden': shouldHide }">
+                <div class="chat-messages" ref="messages">
+                    <message v-for="msg in messages"
+                        :templates="templates"
+                        :multiline="msg.multiline"
+                        :args="msg.args"
+                        :color="msg.color"
+                        :template="msg.template"
+                        :template-id="msg.templateId"
+                        :key="msg">
+                    </message>
+                </div>
+            </div>
+            <div class="chat-input" v-show="showInput">
+                <div>
+                    <span class="prefix"><i class="fas fa-paper-plane fa-lg"></i></span>
+                    <input v-model="message"
+                        ref="input"
+                        type="text"
+                        placeholder="Type a command"
+                        autofocus
+                        spellcheck="false"
+                        @keyup.esc="hideInput"
+                        @keyup="keyUp"
+                        @keydown="keyDown"
+                        @keypress.enter.prevent="send">
+                    </input>
+                </div>
+                <suggestions :message="message" :suggestions="suggestions"></suggestions>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/x-template" id="message_template">
+        <div class="msg" :class="{ multiline }">
+            <span v-html="textEscaped"></span>
+        </div>
+    </script>
+
+    <script type="text/x-template" id="suggestions_template">
+        <div class="suggestions-wrap" v-show="currentSuggestions.length > 0">
+            <ul class="suggestions">
+                <li class="suggestion" v-for="s in currentSuggestions">
+                    <p>
+                        <span :class="{ 'disabled': s.disabled }">
+                            {{s.name}}
+                        </span>
+                        <span class="param"
+                                    v-for="(p, index) in s.params"
+                                    :class="{ 'disabled': p.disabled }">
+                            [{{p.name}}]
+                        </span>
+                    </p>
+                    <small class="help">
+                        <template v-if="!s.disabled">
+                            {{s.help}}
+                        </template>
+                        <template v-for="p in s.params" v-if="!p.disabled">
+                            {{p.help}}
+                        </template>
+                    </small>
+                </li>
+            </ul>
+        </div>
+    </script>
+
+    <script src="js/suggestions.js" type="text/javascript"></script>
+    <script src="js/message.js" type="text/javascript"></script>
+    <script src="js/chat.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        window.post = (url, data) => {
+            var request = new XMLHttpRequest();
+            request.open('POST', url, true);
+            request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+            request.send(data);
+        }
+
+        const instance = new Vue({
+            el: '#app',
+            render: h => h(APP),
+        });
+
+        window.emulate = (type, detail = {}) => {
+            detail.type = type;
+            window.dispatchEvent(new CustomEvent('message', {
+                detail,
+            }));
+        };
+    </script>
+    </body>
+</html>

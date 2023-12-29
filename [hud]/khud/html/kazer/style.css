@@ -1,0 +1,77 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
+* {padding: 0; margin: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif;}
+
+/* HUD BY KAZER  */
+
+.playerStats{
+	position: absolute;
+	left: 350px; 
+	bottom: 10px; 
+	left: 20.0%; 
+	bottom: 1.85; 
+}
+
+.status{
+	display: flex;
+	width: 100px;
+	position: relative;
+	left: -60px;
+	justify-content: space-between;
+}
+
+.lazer{
+	display: flex;
+	width: 100px;
+	position: relative;
+	left: 20px;
+	justify-content: space-between;
+}
+
+.vert-stat{
+	border-radius: 50%;
+	width: 35px;
+	height: 35px;
+	position: absolute; top: -53px; left: 0px;
+	overflow: hidden;
+	background-color: rgba(0,0,0,0.65);
+}
+
+.vert-stat .bg{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+
+.vert-stat img{
+	width: 40%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+
+.vert-water{
+	border-radius: 50%;
+	width: 35px;
+	height: 35px;
+	position: absolute; top: -102px; left: 0px;
+	overflow: hidden;
+	background-color: rgba(0,0,0,0.65);
+}
+
+.vert-water .bg{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+
+.vert-water img{
+	width: 40%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
